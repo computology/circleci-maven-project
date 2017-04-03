@@ -14,4 +14,4 @@ deployment:
     main:
         branch: master
         commands:
-            - mvn -o -s .circleci.settings.xml deploy
+            - mvn -s -DskipTests .circleci.settings.xml deploy
