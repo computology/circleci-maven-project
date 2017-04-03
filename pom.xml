@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.examplecorp</groupId>
+  <artifactId>circleci-maven-project</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>circleci-maven-project</name>
+  <url>https://github.com/computology/circleci-maven-project</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <scm>
+    <connection>scm:git:ssh://github.com/computology/circleci-maven-project.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/computology/circleci-maven-project.git</developerConnection>
+    <url>https://github.com/computology/circleci-maven-project</url>
+  </scm>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>io.packagecloud.maven.wagon</groupId>
+        <artifactId>maven-packagecloud-wagon</artifactId>
+        <version>0.0.4</version>
+      </extension>
+    </extensions>
+  </build>
+
+  <distributionManagement>
+    <repository>
+      <id>packagecloud-examplecorp</id>
+      <url>packagecloud+https://packagecloud.io/exampleCorp/core</url>
+    </repository>
+    <snapshotRepository>
+      <id>packagecloud-examplecorp</id>
+      <url>packagecloud+https://packagecloud.io/exampleCorp/core</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+</project>
