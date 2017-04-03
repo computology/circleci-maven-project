@@ -1,11 +1,11 @@
 dependencies:
-   cache_directories:
-     - "~/maven-cache"
-   pre:
-     - mkdir -p ~/maven-cache
-   override:
-     - mvn -s .circleci.settings.xml -DskipTests clean install dependency:resolve-plugins dependency:go-offline
+    cache_directories:
+        - "~/maven-cache"
+    pre:
+        - mkdir -p ~/maven-cache
+    override:
+        - mvn -s .circleci.settings.xml -DskipTests clean install dependency:resolve-plugins dependency:go-offline
 
- test:
-   override:
-     - mvn -o -s .circleci.settings.xml surefire:test
+    test:
+        override:
+            - mvn -o -s .circleci.settings.xml surefire:test
