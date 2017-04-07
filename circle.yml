@@ -1,10 +1,10 @@
 dependencies:
   override:
-    - mvn -s .circleci.settings.xml -DskipTests clean install dependency:resolve-plugins dependency:go-offline
+    - mvn -DskipTests clean install dependency:resolve-plugins dependency:go-offline
 
 test:
   override:
-    - mvn -o -s .circleci.settings.xml surefire:test
+    - mvn -o surefire:test
 
 deployment:
   main:
